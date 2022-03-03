@@ -9,12 +9,10 @@ button.addEventListener("click", () => {
   if (input.value !== "") {
     gender = fetch(`${serverUrl}?name=${input.value}`)
       .then((response) => {
-        console.log(response)
         return response.json();
       })
       .then((result) => {
-        console.log(result)
-        output.innerHTML = result.gender;
+        output.textContent = result.gender;
       });
   }
 })
